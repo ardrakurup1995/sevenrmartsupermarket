@@ -14,7 +14,7 @@ import com.sevenrmartsupermarket.constants.Constants;
 
 public class CaptureScreenShot {
 	
-	TakesScreenshot takesscreenshot;//interface to capture screenshorts
+	TakesScreenshot takesscreenshot;
 
 	public void takeScreenShot(WebDriver driver, String imageName)
 	{
