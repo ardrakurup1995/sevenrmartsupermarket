@@ -7,11 +7,16 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.sevenrmartsupermarket.utilities.PageUtility;
 
-public class AdminUserPage {
+public class ManageContactPage {
 	
 	WebDriver driver;
+	
+	@FindBy(xpath="(//p[contains(text(),'Manage Contact')])[1]")
+	 private WebElement managecontactinfo;
+	
 	@FindBy(xpath="(//a[contains(text(),'More info ')])[1]")
 	 private WebElement moreInfoButton;
+	
 	
 	@FindBy(xpath="//a[contains(text(),'New')]")
 	 private WebElement newUserField;
@@ -26,16 +31,19 @@ public class AdminUserPage {
 	
 	
 	
-	public AdminUserPage(WebDriver driver)
+	public  ManageContactPage(WebDriver driver) 
 	{
 		this.driver=driver;
-		PageFactory.initElements(driver,this);
+		PageFactory.initElements(driver, this);
+		
 	}
+ 
 	public void clickOnUserInfoButton()
 	{
 		moreInfoButton.click();
-		newUserField.click();
+		
 	}
+	
 	public void enterUserNameField(String userName)
 	{
 		userNameField.sendKeys(userName);	
@@ -56,12 +64,6 @@ public class AdminUserPage {
 		saveButton.click();	
 	}
 	
-	public boolean verifyNewUserButton()
-	{
-		boolean b= newUserField.isEnabled();
-		return b;
-	}
-	
-	
 	
 }
+

@@ -33,7 +33,7 @@ public class LoginTest extends Base{
 	
 		loginpage=new LoginPage(driver);
 		dashboardpage=new DashBoardPage(driver);
-		loginpage.login("admin", "admin");;
+		loginpage.login("admin", "admin");
 		String actualProfileName=dashboardpage.getProfileName();
 		String expectedProfileName="Admin";
 		Assert.assertEquals(actualProfileName,expectedProfileName);

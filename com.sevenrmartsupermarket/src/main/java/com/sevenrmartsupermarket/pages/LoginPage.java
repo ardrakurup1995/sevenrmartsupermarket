@@ -40,10 +40,12 @@ public class LoginPage {
 	
 	public void enterUserName(String userName) {
 		userNameField.sendKeys(userName);
+		
 	}
 	
 	public void enterPassWord(String passWord) {
 		passwordField.sendKeys(passWord);
+		
 		
 		
 	}
@@ -52,24 +54,33 @@ public class LoginPage {
 		WaitUtility waitutility=new WaitUtility(driver);
 		waitutility.elementToBeClickable(signInButton, 60);
 		signInButton.click();
+		
 	}
 	
-	public void login(String userName,String password )
+	public AdminUserPage login(String userName,String password )
 	{
 		enterUserName(userName);
 		enterPassWord(password);
 		clickOnSignIn();
+		return new AdminUserPage(driver);
 	}
 	
-	public void login() { 
+	public AdminUserPage login() { 
 		String userName=properties.getProperty("userName");
 		String passWord=properties.getProperty("password");
 		enterUserName(userName);
 		enterPassWord(passWord);
 		clickOnSignIn();
+		return new AdminUserPage(driver);
 	}
-
-	
+	public ManageContactPage login1() { 
+		String userName=properties.getProperty("userName");
+		String passWord=properties.getProperty("password");
+		enterUserName(userName);
+		enterPassWord(passWord);
+		clickOnSignIn();
+		return new ManageContactPage(driver);
+	}
 
 	public String get_TextOfAlert() 
 	{

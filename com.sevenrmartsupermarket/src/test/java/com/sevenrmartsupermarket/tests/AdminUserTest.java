@@ -26,7 +26,7 @@ public class AdminUserTest extends Base {
 	public void vAalidateNewUser()
 	{
 		loginpage= new LoginPage(driver);
-		loginpage.login();
+		adminuserpage=loginpage.login();
 		adminuserpage=new AdminUserPage(driver);
 		adminuserpage.clickOnUserInfoButton();
 		adminuserpage.verifyNewUserButton();
